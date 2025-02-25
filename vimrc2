@@ -1,0 +1,69 @@
+" ========================================================
+" Configuración de colores para Programación Competitiva (ICPC)
+" Tonalidad clara, moderna y de alta legibilidad
+" ========================================================
+
+" Limpiar resaltados y activar sintaxis
+highlight clear
+syntax enable
+set background=light
+
+" Habilitar colores verdaderos si el terminal lo soporta
+if has("termguicolors")
+    set termguicolors
+endif
+
+" --------------------------------------------------------
+" Paleta principal
+" --------------------------------------------------------
+" Normal: Texto en gris oscuro sobre fondo blanco
+highlight Normal       ctermfg=235 ctermbg=255 guifg=#383838 guibg=#FFFFFF
+
+" Líneas de número
+highlight LineNr       ctermfg=245            guifg=#8a8a8a
+highlight CursorLineNr ctermfg=27  cterm=bold  guifg=#005f87
+
+" Línea actual (fondo sutilmente resaltado)
+highlight CursorLine   ctermbg=254           guibg=#FAFAFA
+
+" --------------------------------------------------------
+" Elementos de sintaxis
+" --------------------------------------------------------
+highlight Comment      ctermfg=242           guifg=#9a9a9a   " Comentarios en gris
+highlight Constant     ctermfg=160           guifg=#d70000   " Constantes en rojo intenso
+highlight Identifier   ctermfg=25            guifg=#005f87   " Identificadores en azul marino
+highlight Statement    ctermfg=28            guifg=#00875f   " Palabras clave en verde oscuro
+highlight PreProc      ctermfg=90            guifg=#8700af   " Directivas del preprocesador en púrpura
+highlight Type         ctermfg=34            guifg=#005f00   " Tipos en verde bosque
+highlight Special      ctermfg=166           guifg=#d75f00   " Elementos especiales en naranja
+highlight String       ctermfg=136           guifg=#af8700   " Cadenas en dorado
+highlight Number       ctermfg=132           guifg=#870000   " Números en rojo vino
+
+" Resaltar paréntesis coincidentes (útil para equilibrar delimitadores)
+highlight MatchParen   ctermfg=16 ctermbg=153 guifg=#000000 guibg=#b3b3ff
+
+" --------------------------------------------------------
+" Interfaz y búsquedas
+" --------------------------------------------------------
+highlight Search       ctermfg=16 ctermbg=229 guifg=#000000 guibg=#ffffaf   " Resaltado al buscar (amarillo claro)
+highlight Visual       ctermbg=225          guibg=#e0e0ff                     " Selección visual (azul muy claro)
+highlight Error        ctermfg=160 ctermbg=224 guifg=#ffffff guibg=#ff5f5f   " Errores en rojo con fondo suave
+highlight WarningMsg   ctermfg=94  ctermbg=223 guifg=#000000 guibg=#ffd75f   " Advertencias en naranja claro
+highlight Folded       ctermfg=245 ctermbg=250 guifg=#999999 guibg=#f0f0f0   " Bloques plegados
+
+" --------------------------------------------------------
+" Configuraciones adicionales útiles para competencias
+" --------------------------------------------------------
+set number                " Mostrar números de línea absolutos
+set relativenumber        " Números relativos para moverse más rápido
+set cursorline            " Resaltar la línea actual para no perder el foco
+set incsearch             " Búsqueda incremental
+set ignorecase            " Búsqueda sin distinguir mayúsculas/minúsculas
+set smartcase             " Pero que sea sensible si se usan mayúsculas
+set showmatch             " Resaltar paréntesis coincidentes
+
+" --------------------------------------------------------
+" Mapeos útiles
+" Ejemplo: Compilar y ejecutar en C++ (adaptable a otros lenguajes)
+nnoremap <F5> :w<CR>:!g++ -std=c++17 -O2 -Wall % -o %:r && ./%:r<CR>
+
