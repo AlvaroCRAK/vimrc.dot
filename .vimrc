@@ -14,7 +14,7 @@ set smartindent
 set nowrap
 set showmatch
 
-set incsearc" Configuración de colores alternativa (Estilo oscuro moderno)
+set incsearch  " Configuración de colores alternativa (Estilo oscuro moderno)
 
 highlight clear
 set background=dark
