@@ -1,0 +1,99 @@
+" Configuración básica para programación competitiva (ICPC) con colores manuales
+
+" Ajustes generales
+set nocompatible
+syntax enable
+set number
+set relativenumber
+set cursorline
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set smartindent
+set nowrap
+set showmatch
+
+" Tema oscuro alternativo - Estilo "Midnight Storm"
+
+highlight clear
+set background=dark
+syntax reset
+
+" Paleta principal
+highlight Normal       ctermfg=250     ctermbg=235     " Gris suave sobre fondo negro azulado
+highlight LineNr       ctermfg=239                     " Números de línea gris oscuro
+highlight CursorLineNr ctermfg=117     cterm=bold      " Número línea actual azul claro
+highlight CursorLine   ctermbg=237     cterm=none      " Línea actual gris azulado
+
+" Elementos de sintaxis
+highlight Comment      ctermfg=245     cterm=italic    " Comentarios gris medio
+highlight Constant     ctermfg=209                     " Constantes naranja suave
+highlight Identifier   ctermfg=111                     " Identificadores azul cielo
+highlight Statement    ctermfg=141     cterm=bold      " Palabras clave púrpura brillante
+highlight PreProc      ctermfg=207                     " Preprocesador rosa neón
+highlight Type         ctermfg=114                     " Tipos verde aquamarina
+highlight Special      ctermfg=215                     " Caracteres especiales naranja dorado
+highlight String       ctermfg=228                     " Strings amarillo crema
+highlight Number       ctermfg=180                     " Números coral claro
+highlight MatchParen   ctermfg=16      ctermbg=153     " Paréntesis fondo azul pastel
+
+" Interfaz
+highlight Search       ctermfg=16      ctermbg=190     " Búsqueda verde limón
+highlight Visual                       ctermbg=239     " Selección gris carbón
+highlight Error        ctermfg=231     ctermbg=160     " Errores rojo brillante
+highlight WarningMsg   ctermfg=16      ctermbg=222     " Advertencias amarillo claro
+highlight Folded       ctermfg=244     ctermbg=233     " Pliegues gris oscuro
+
+" Ajustes especiales para C++
+highlight Include      ctermfg=165                     " #includes púrpura intenso
+highlight StorageClass ctermfg=73                      " Tipos de almacenamiento turquesa
+highlight Operator     ctermfg=110                     " Operadores azul acero
+highlight cppType      ctermfg=84                      " Tipos C++ verde menta
+
+" Elementos adicionales
+highlight NonText      ctermfg=238                     " Caracteres no-texto
+highlight Todo         ctermfg=196     ctermbg=234     " TODOs destacados
+highlight Underlined   ctermfg=111     cterm=underline " URLs/enlaces
+
+set hlsearch
+set ignorecase
+set smartcase
+
+" Rendimiento
+set ttyfast
+set lazyredraw
+
+" Teclas rápidas personalizadas
+map <F5> :w<CR>:!g++ -std=c++11 -Wall -O2 -o %:r % && ./%:r<CR>
+map <F6> :w<CR>:!./%:r<CR>
+map <F9> :w<CR>:!g++ -std=c++11 -Wall -O2 -o %:r %<CR>
+
+" Ajustes de archivo
+set encoding=utf-8
+set fileformat=unix
+
+" Eliminar espacios al final al guardar
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Deshabilitar archivos de respaldo
+set nobackup
+set noswapfile
+set nowritebackup
+
+" Ayudas para depuración
+set showcmd
+set report=0
+set errorbells
+set visualbell
+
+" Atajos de tiempo de competencia
+inoremap <C-B> <Esc>:w<CR>a
+nnoremap <C-S> :w<CR>
+inoremap jj <Esc>
+
+" Scroll y navegación
+set scrolloff=10                 " Margen vertical al desplazar
+set sidescrolloff=5              " Margen horizontal al desplazar
+set sidescroll=1                 " Desplazamiento horizontal suave
+
