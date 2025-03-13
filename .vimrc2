@@ -36,7 +36,7 @@ highlight Type         ctermfg=28                      " Tipos verde bosque
 highlight Special      ctermfg=166                     " Caracteres especiales naranja oscuro
 highlight String       ctermfg=136                     " Strings dorado
 highlight Number       ctermfg=132                     " Números rojo vino
-highlight MatchParen   ctermfg=16      ctermbg=153     " Paréntesis fondo azul claro
+highlight MatchParen ctermfg=0  ctermbg=153            " Delimitadores coincidentes: texto negro sobre fondo azul claro para fácil identificación
 
 " Interfaz
 highlight Search       ctermfg=16      ctermbg=229     " Búsqueda amarillo claro
@@ -87,3 +87,9 @@ set visualbell
 inoremap <C-B> <Esc>:w<CR>a
 nnoremap <C-S> :w<CR>
 inoremap jj <Esc>
+
+" Scroll y navegación
+set scrolloff=10                 " Margen vertical al desplazar
+set sidescrolloff=5              " Margen horizontal al desplazar
+set sidescroll=1                 " Desplazamiento horizontal suave
+
