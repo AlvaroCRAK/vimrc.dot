@@ -14,7 +14,7 @@ set smartindent
 set nowrap
 set showmatch
 
-set incsearch  " Configuración de colores alternativa (Estilo oscuro moderno)
+" Configuración de colores alternativa (Estilo oscuro moderno)
 
 highlight clear
 set background=dark
@@ -49,6 +49,7 @@ highlight Folded       ctermfg=245     ctermbg=233     " Pliegues
 highlight Include      ctermfg=199                     " #includes magenta brillante
 highlight StorageClass ctermfg=80                      " Tipos de almacenamiento cyan
 highlight Operator     ctermfg=111                     " Operadores azul cieloh
+
 
 set hlsearch
 set ignorecase
@@ -85,3 +86,9 @@ set visualbell
 inoremap <C-B> <Esc>:w<CR>a
 nnoremap <C-S> :w<CR>
 inoremap jj <Esc>
+
+" Scroll y navegación
+set scrolloff=10                 " Margen vertical al desplazar
+set sidescrolloff=5              " Margen horizontal al desplazar
+set sidescroll=1                 " Desplazamiento horizontal suave
+
