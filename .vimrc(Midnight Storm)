@@ -27,7 +27,7 @@ highlight CursorLineNr ctermfg=117     cterm=bold      " Número línea actual a
 highlight CursorLine   ctermbg=237     cterm=none      " Línea actual gris azulado
 
 " Elementos de sintaxis
-highlight Comment      ctermfg=245     cterm=italic    " Comentarios gris medio
+highlight Comment      ctermfg=245     " cterm=italic    " Comentarios gris medio
 highlight Constant     ctermfg=209                     " Constantes naranja suave
 highlight Identifier   ctermfg=111                     " Identificadores azul cielo
 highlight Statement    ctermfg=141     cterm=bold      " Palabras clave púrpura brillante
