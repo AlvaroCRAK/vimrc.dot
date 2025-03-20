@@ -36,7 +36,7 @@ highlight Type         ctermfg=114                     " Tipos verde aquamarina
 highlight Special      ctermfg=215                     " Caracteres especiales naranja dorado
 highlight String       ctermfg=228                     " Strings amarillo crema
 highlight Number       ctermfg=180                     " Números coral claro
-highlight MatchParen   ctermfg=16      ctermbg=153     " Paréntesis fondo azul pastel
+highlight MatchParen   ctermfg=16      ctermbg=226     " Paréntesis fondo azul pastel
 
 " Interfaz
 highlight Search       ctermfg=16      ctermbg=190     " Búsqueda verde limón
