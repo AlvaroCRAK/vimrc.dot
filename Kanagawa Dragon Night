@@ -1,0 +1,112 @@
+" Configuración básica para programación competitiva (ICPC) con colores manuales
+
+" Ajustes generales
+set nocompatible
+syntax enable
+set number
+set relativenumber
+set cursorline
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set smartindent
+set nowrap
+set showmatch
+
+" Kanagawa Dragon Night - Olas oscuras bajo la luna
+
+highlight clear
+set background=dark
+syntax reset
+
+" Paleta principal (Noche en el Pacífico)
+highlight Normal       ctermfg=252     ctermbg=235     " Tinta de marfil sobre mar nocturno
+highlight LineNr       ctermfg=240     ctermbg=233     " Números como arena oscura
+highlight CursorLineNr ctermfg=214     cterm=bold      " Número actual en oro fundido
+highlight CursorLine   ctermbg=236     cterm=none      " Línea actual como ola profunda
+
+" Elementos de sintaxis (Arte del dragón)
+highlight Comment      ctermfg=246                     " Comentarios gris bruma marina
+highlight Constant     ctermfg=167                     " Constantes rojo atardecer
+highlight Identifier   ctermfg=117                     " Identificadores azul celeste
+highlight Statement    ctermfg=220     cterm=bold      " Palabras clave amarillo shōgun
+highlight PreProc      ctermfg=176                     " Preprocesador púrpura wisteria
+highlight Type         ctermfg=108                     " Tipos verde bosque de cedro
+highlight Special      ctermfg=208                     " Caracteres especiales naranja linterna
+highlight String       ctermfg=108                     " Strings verde jade
+highlight Number       ctermfg=178                     " Números oro antiguo
+highlight MatchParen   ctermfg=255     ctermbg=124     " Paréntesis como sellos de lacre
+
+" Interfaz (Geisha de la noche)
+highlight Search       ctermfg=232     ctermbg=226     " Búsqueda en amarillo farol
+highlight Visual                       ctermbg=239     " Selección como seda negra
+highlight Error        ctermfg=255     ctermbg=124     " Errores sangre de dragón
+highlight WarningMsg   ctermfg=208     ctermbg=235     " Advertencias fuego de antorcha
+highlight Folded       ctermfg=241     ctermbg=233     " Pliegues papiro antiguo
+
+" Elementos místicos (Dragón y Tigre)
+highlight Include      ctermfg=206                     " #includes flor de ciruelo
+highlight StorageClass ctermfg=178                     " Tipos en bronce pulido
+highlight Operator     ctermfg=208                     " Operadores fuego ceremonial
+highlight Function     ctermfg=117                     " Funciones azul profundo
+
+" Detalles de olas (Hokusai moderno)
+highlight Todo         ctermfg=235     ctermbg=178     " TODOs en pergamino dorado
+highlight SpecialKey   ctermfg=239                     " Caracteres como piedras mojadas
+highlight NonText      ctermfg=238                     " Bordes de tinta desvanecida
+highlight Underlined   ctermfg=111     cterm=underline " Enlaces como reflejos lunares
+
+" Efectos especiales (Onmyōdō)
+highlight! link Character   String
+highlight! link Boolean     Constant
+highlight! link Conditional Statement
+
+" Brillo de la luna sobre las olas
+highlight ColorColumn  ctermbg=234
+highlight Pmenu        ctermbg=236     ctermfg=251
+highlight PmenuSel     ctermbg=214     ctermfg=235
+
+
+
+set hlsearch
+set ignorecase
+set smartcase
+
+" Rendimiento
+set ttyfast
+set lazyredraw
+
+" Teclas rápidas personalizadas
+map <F5> :w<CR>:!g++ -std=c++11 -Wall -O2 -o %:r % && ./%:r<CR>
+map <F6> :w<CR>:!./%:r<CR>
+map <F9> :w<CR>:!g++ -std=c++11 -Wall -O2 -o %:r %<CR>
+
+" Ajustes de archivo
+set encoding=utf-8
+set fileformat=unix
+
+" Eliminar espacios al final al guardar
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Deshabilitar archivos de respaldo
+set nobackup
+set noswapfile
+set nowritebackup
+
+" Ayudas para depuración
+set showcmd
+set report=0
+set errorbells
+set visualbell
+
+" Atajos de tiempo de competencia
+inoremap <C-B> <Esc>:w<CR>a
+nnoremap <C-S> :w<CR>
+inoremap jj <Esc>
+
+" Scroll y navegación
+set scrolloff=10                 " Margen vertical al desplazar
+set sidescrolloff=5              " Margen horizontal al desplazar
+set sidescroll=1                 " Desplazamiento horizontal suave
+
