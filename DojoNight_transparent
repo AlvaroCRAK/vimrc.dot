@@ -1,0 +1,112 @@
+" Configuración mejorada para programación competitiva (ICPC)
+
+" Ajustes generales
+set nocompatible
+syntax enable
+set number
+set relativenumber
+set cursorline
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set smartindent
+set nowrap
+set showmatch
+
+" Tema oscuro - Dojo Nocturno mejorado
+highlight clear
+set background=dark
+syntax enable
+
+" Paleta principal con transparencia mejorada
+highlight Normal       ctermfg=253     ctermbg=NONE    guibg=NONE
+highlight LineNr       ctermfg=242     ctermbg=NONE    guibg=NONE
+highlight CursorLineNr ctermfg=214     ctermbg=NONE    cterm=bold
+highlight CursorLine   ctermbg=236     cterm=NONE      guibg=#303030
+
+" Elementos de sintaxis (optimizados)
+highlight Comment      ctermfg=244     guifg=#808080
+highlight Constant     ctermfg=210     guifg=#ff8787
+highlight Identifier   ctermfg=111     guifg=#87afff
+highlight Statement    ctermfg=179     cterm=bold      guifg=#d7af5f gui=bold
+highlight PreProc      ctermfg=183     guifg=#d7afff
+highlight Type         ctermfg=114     guifg=#87d787
+highlight Special      ctermfg=208     guifg=#ff8700
+highlight String       ctermfg=108     guifg=#87af87
+highlight Number       ctermfg=180     guifg=#d7af87
+highlight MatchParen   ctermfg=255     ctermbg=33      guifg=#ffffff guibg=#0087ff
+
+" Interfaz mejorada
+highlight Search       ctermfg=234     ctermbg=228     guifg=#1c1c1c guibg=#ffff87
+highlight Visual       ctermbg=239     guibg=#4e4e4e
+highlight Error        ctermfg=255     ctermbg=124     guifg=#ffffff guibg=#af0000
+highlight WarningMsg   ctermfg=208     ctermbg=NONE    guifg=#ff8700 guibg=NONE
+highlight Folded       ctermfg=245     ctermbg=NONE    guifg=#8a8a8a guibg=NONE
+
+" Elementos estructurales
+highlight Include      ctermfg=174     guifg=#d78787
+highlight StorageClass ctermfg=179     guifg=#d7af5f
+highlight Operator     ctermfg=208     guifg=#ff8700
+highlight Function     ctermfg=117     guifg=#87d7ff
+
+" Marcadores y ayudas
+highlight Todo         ctermfg=234     ctermbg=228     guifg=#1c1c1c guibg=#ffff87
+highlight SpecialKey   ctermfg=239     guifg=#4e4e4e
+highlight NonText      ctermfg=238     guifg=#444444
+highlight Underlined   ctermfg=111     cterm=underline guifg=#87afff gui=underline
+
+" Efectos especiales
+highlight! link Character   String
+highlight! link Boolean     Constant
+highlight! link Conditional Statement
+
+" Elementos de interfaz mejorados
+highlight ColorColumn  ctermbg=236     guibg=#303030
+highlight Pmenu        ctermbg=238     ctermfg=253     guibg=#444444 guifg=#dadada
+highlight PmenuSel     ctermbg=111     ctermfg=235     guibg=#87afff guifg=#262626
+
+" Resto de configuraciones (se mantienen igual)
+" ... (tus configuraciones de búsqueda, rendimiento, teclas rápidas, etc.)
+
+" Configuraciones de búsqueda (se mantienen iguales)
+set hlsearch
+set ignorecase
+set smartcase
+
+" Rendimiento (se mantienen iguales)
+set ttyfast
+set lazyredraw
+
+" Teclas rápidas personalizadas (se mantienen iguales)
+map <F5> :w<CR>:!g++ -std=c++11 -Wall -O2 -o %:r % && ./%:r<CR>
+map <F6> :w<CR>:!./%:r<CR>
+map <F9> :w<CR>:!g++ -std=c++11 -Wall -O2 -o %:r %<CR>
+
+" Ajustes de archivo (se mantienen iguales)
+set encoding=utf-8
+set fileformat=unix
+
+" Eliminar espacios al final al guardar (se mantiene igual)
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Deshabilitar archivos de respaldo (se mantiene igual)
+set nobackup
+set noswapfile
+set nowritebackup
+
+" Ayudas para depuración (se mantienen iguales)
+set showcmd
+set report=0
+set errorbells
+set visualbell
+
+" Atajos de tiempo de competencia (se mantienen iguales)
+inoremap <C-B> <Esc>:w<CR>a
+nnoremap <C-S> :w<CR>
+inoremap jj <Esc>
+
+" Scroll y navegación (se mantienen iguales)
+set scrolloff=10
+set sidescrolloff=5
+set sidescroll=1
