@@ -1,0 +1,87 @@
+" Configuración optimizada para programación competitiva en C++ (Linux Fedora)
+set nocompatible                " Desactivar modo compatible
+
+"=============================================
+" EDITOR BÁSICO
+"=============================================
+set backspace=indent,eol,start   " Backspace normal
+set clipboard=unnamedplus       " Compartir con portapapeles del sistema
+set number relativenumber        " Números absolutos y relativos
+set cursorline                   " Resalta línea actual
+
+"=============================================
+" BUSQUEDAS
+"=============================================
+set ignorecase                  " Búsqueda sin distinguir mayúsculas
+set smartcase                   " Mayúsculas hacen búsqueda exacta
+set hlsearch                    " Resalta resultados
+set incsearch                   " Búsqueda incremental
+set noerrorbells                " Sin campanas de error
+
+"=============================================
+" INDENTACIÓN Y TABULACIÓN
+"=============================================
+set expandtab                   " Tab como espacios
+set shiftwidth=4                " Ancho de indentación
+set softtabstop=4               " Tab suave
+set tabstop=4                   " Tab física
+
+"=============================================
+" RENDIMIENTO DE TECLAS
+"=============================================
+set timeoutlen=500              " Tiempo para secuencias
+
+"=============================================
+" SINTAXIS Y TIPO DE ARCHIVO
+"=============================================
+filetype plugin indent on       " Detectar y aplicar plugins de indent
+syntax on                       " Resalta sintaxis
+
+"=============================================
+" OCULTAR ELEMENTOS NO CRÍTICOS
+"=============================================
+set noswapfile                  " Sin swapfile
+set nobackup                    " Sin backup
+set nowritebackup               " Sin write backup
+set noundofile                  " Sin undo persistente
+
+"=============================================
+" MENSAJE DE INICIO
+"=============================================
+autocmd VimEnter * echo "Vim listo para competir en C++!"
+
+" Configuración de colores estilo claro moderno
+
+highlight clear
+set background=light
+syntax reset
+
+" Fondo blanco puro mejorado
+highlight Normal       ctermfg=234     ctermbg=15      guifg=#000000 guibg=#ffffff
+highlight LineNr       ctermfg=242     ctermbg=15      guifg=#6c6c6c guibg=#ffffff
+highlight CursorLineNr ctermfg=160     cterm=bold      guifg=#d70000 gui=bold
+highlight CursorLine   ctermbg=255     cterm=none      guibg=#eeeeee
+
+" Elementos de sintaxis
+highlight Comment      ctermfg=242                     " Comentarios gris medio
+highlight Constant     ctermfg=160                     " Constantes rojo intenso
+highlight Identifier   ctermfg=25                      " Identificadores azul marino
+highlight Statement    ctermfg=23      cterm=bold      " Palabras clave verde oscuro
+highlight PreProc      ctermfg=90                      " Preprocesador púrpura
+highlight Type         ctermfg=28                      " Tipos verde bosque
+highlight Special      ctermfg=166                     " Caracteres especiales naranja oscuro
+highlight String       ctermfg=136                     " Strings dorado
+highlight Number       ctermfg=132                     " Números rojo vino
+highlight MatchParen ctermfg=0  ctermbg=153            " Delimitadores coincidentes: texto negro sobre fondo azul claro para fácil identificación
+
+" Interfaz
+highlight Search       ctermfg=16      ctermbg=229     " Búsqueda amarillo claro
+highlight Visual                       ctermbg=225     " Selección lila muy claro
+highlight Error        ctermfg=160     ctermbg=224     " Errores rojo con fondo claro
+highlight WarningMsg   ctermfg=94      ctermbg=223     " Advertencias naranja claro
+highlight Folded       ctermfg=245     ctermbg=250     " Pliegues gris claro
+
+" Ajustes especiales para C++
+highlight Include      ctermfg=90                      " #includes púrpura oscuro
+highlight StorageClass ctermfg=24                      " Tipos de almacenamiento azul
+highlight Operator     ctermfg=23                      " Operadores verde oscuro

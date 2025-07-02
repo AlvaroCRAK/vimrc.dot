@@ -1,18 +1,54 @@
-" Configuración mejorada para programación competitiva (ICPC)
+" Configuración optimizada para programación competitiva en C++ (Linux Fedora)
+set nocompatible                " Desactivar modo compatible
 
-" Ajustes generales
-set nocompatible
-syntax enable
-set number
-set relativenumber
-set cursorline
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set smartindent
-set nowrap
-set showmatch
+"=============================================
+" EDITOR BÁSICO
+"=============================================
+set backspace=indent,eol,start   " Backspace normal
+set clipboard=unnamedplus       " Compartir con portapapeles del sistema
+set number relativenumber        " Números absolutos y relativos
+set cursorline                   " Resalta línea actual
+
+"=============================================
+" BUSQUEDAS
+"=============================================
+set ignorecase                  " Búsqueda sin distinguir mayúsculas
+set smartcase                   " Mayúsculas hacen búsqueda exacta
+set hlsearch                    " Resalta resultados
+set incsearch                   " Búsqueda incremental
+set noerrorbells                " Sin campanas de error
+
+"=============================================
+" INDENTACIÓN Y TABULACIÓN
+"=============================================
+set expandtab                   " Tab como espacios
+set shiftwidth=4                " Ancho de indentación
+set softtabstop=4               " Tab suave
+set tabstop=4                   " Tab física
+
+"=============================================
+" RENDIMIENTO DE TECLAS
+"=============================================
+set timeoutlen=500              " Tiempo para secuencias
+
+"=============================================
+" SINTAXIS Y TIPO DE ARCHIVO
+"=============================================
+filetype plugin indent on       " Detectar y aplicar plugins de indent
+syntax on                       " Resalta sintaxis
+
+"=============================================
+" OCULTAR ELEMENTOS NO CRÍTICOS
+"=============================================
+set noswapfile                  " Sin swapfile
+set nobackup                    " Sin backup
+set nowritebackup               " Sin write backup
+set noundofile                  " Sin undo persistente
+
+"=============================================
+" MENSAJE DE INICIO
+"=============================================
+autocmd VimEnter * echo "Vim listo para competir en C++!"
 
 " Tema oscuro - Dojo Nocturno mejorado
 highlight clear
@@ -66,47 +102,5 @@ highlight ColorColumn  ctermbg=236     guibg=#303030
 highlight Pmenu        ctermbg=238     ctermfg=253     guibg=#444444 guifg=#dadada
 highlight PmenuSel     ctermbg=111     ctermfg=235     guibg=#87afff guifg=#262626
 
-" Resto de configuraciones (se mantienen igual)
-" ... (tus configuraciones de búsqueda, rendimiento, teclas rápidas, etc.)
 
-" Configuraciones de búsqueda (se mantienen iguales)
-set hlsearch
-set ignorecase
-set smartcase
 
-" Rendimiento (se mantienen iguales)
-set ttyfast
-set lazyredraw
-
-" Teclas rápidas personalizadas (se mantienen iguales)
-map <F5> :w<CR>:!g++ -std=c++11 -Wall -O2 -o %:r % && ./%:r<CR>
-map <F6> :w<CR>:!./%:r<CR>
-map <F9> :w<CR>:!g++ -std=c++11 -Wall -O2 -o %:r %<CR>
-
-" Ajustes de archivo (se mantienen iguales)
-set encoding=utf-8
-set fileformat=unix
-
-" Eliminar espacios al final al guardar (se mantiene igual)
-autocmd BufWritePre * :%s/\s\+$//e
-
-" Deshabilitar archivos de respaldo (se mantiene igual)
-set nobackup
-set noswapfile
-set nowritebackup
-
-" Ayudas para depuración (se mantienen iguales)
-set showcmd
-set report=0
-set errorbells
-set visualbell
-
-" Atajos de tiempo de competencia (se mantienen iguales)
-inoremap <C-B> <Esc>:w<CR>a
-nnoremap <C-S> :w<CR>
-inoremap jj <Esc>
-
-" Scroll y navegación (se mantienen iguales)
-set scrolloff=10
-set sidescrolloff=5
-set sidescroll=1

@@ -1,0 +1,106 @@
+" Configuración optimizada para programación competitiva en C++ (Linux Fedora)
+set nocompatible                " Desactivar modo compatible
+
+"=============================================
+" EDITOR BÁSICO
+"=============================================
+set backspace=indent,eol,start   " Backspace normal
+set clipboard=unnamedplus       " Compartir con portapapeles del sistema
+set number relativenumber        " Números absolutos y relativos
+set cursorline                   " Resalta línea actual
+
+"=============================================
+" BUSQUEDAS
+"=============================================
+set ignorecase                  " Búsqueda sin distinguir mayúsculas
+set smartcase                   " Mayúsculas hacen búsqueda exacta
+set hlsearch                    " Resalta resultados
+set incsearch                   " Búsqueda incremental
+set noerrorbells                " Sin campanas de error
+
+"=============================================
+" INDENTACIÓN Y TABULACIÓN
+"=============================================
+set expandtab                   " Tab como espacios
+set shiftwidth=4                " Ancho de indentación
+set softtabstop=4               " Tab suave
+set tabstop=4                   " Tab física
+
+"=============================================
+" RENDIMIENTO DE TECLAS
+"=============================================
+set timeoutlen=500              " Tiempo para secuencias
+
+"=============================================
+" SINTAXIS Y TIPO DE ARCHIVO
+"=============================================
+filetype plugin indent on       " Detectar y aplicar plugins de indent
+syntax on                       " Resalta sintaxis
+
+"=============================================
+" OCULTAR ELEMENTOS NO CRÍTICOS
+"=============================================
+set noswapfile                  " Sin swapfile
+set nobackup                    " Sin backup
+set nowritebackup               " Sin write backup
+set noundofile                  " Sin undo persistente
+
+"=============================================
+" MENSAJE DE INICIO
+"=============================================
+autocmd VimEnter * echo "Vim listo para competir en C++!"
+
+"=============================================
+" TEMA KANAGAWA DRAGON (VSCode Style) CON FONDO TRANSPARENTE
+"=============================================
+set termguicolors               " Habilita true colors
+set background=dark
+
+" Paleta de colores estilo Kanagawa Dragon con fondo transparente
+highlight Normal       ctermfg=252     ctermbg=NONE    guifg=#DCD7BA guibg=NONE
+highlight LineNr       ctermfg=242     ctermbg=NONE    guifg=#727169 guibg=NONE
+highlight CursorLine   cterm=NONE ctermbg=235 guibg=#2A2A37 gui=NONE
+highlight CursorLineNr cterm=NONE ctermbg=235 ctermfg=215 guifg=#FFA066 guibg=#2A2A37 gui=NONE
+
+" Sintaxis Kanagawa Dragon
+highlight Comment      ctermfg=102     guifg=#7E9CD8
+highlight Constant     ctermfg=208     guifg=#FFA066
+highlight Identifier   ctermfg=108     guifg=#98BB6C
+highlight Statement    ctermfg=167     guifg=#E46876
+highlight PreProc      ctermfg=176     guifg=#957FB8
+highlight Type         ctermfg=109     guifg=#7FB4CA
+highlight Special      ctermfg=175     guifg=#D27E99
+highlight String       ctermfg=108     guifg=#98BB6C
+highlight Number       ctermfg=176     guifg=#957FB8
+
+" Elementos de UI con transparencia
+highlight Visual       ctermbg=239     guibg=#54546D
+highlight Search       ctermfg=234     ctermbg=108     guifg=#1F1F28 guibg=#98BB6C
+highlight Pmenu        ctermbg=NONE    ctermfg=252     guibg=NONE    guifg=#DCD7BA
+highlight PmenuSel     ctermbg=240     ctermfg=255     guibg=#54546D guifg=#FFFFFF
+highlight StatusLine   ctermbg=NONE    ctermfg=252     guibg=NONE    guifg=#DCD7BA
+highlight Todo         ctermfg=234     ctermbg=108     guifg=#1F1F28 guibg=#98BB6C
+highlight Error        ctermfg=234     ctermbg=167     guifg=#1F1F28 guibg=#E46876
+highlight MatchParen   ctermfg=234     ctermbg=109     guifg=#1F1F28 guibg=#7FB4CA
+
+" Elementos específicos de C++
+highlight cppType      ctermfg=109     guifg=#7FB4CA
+highlight cppSTLType   ctermfg=175     guifg=#D27E99
+highlight cppAccess    ctermfg=176     guifg=#957FB8
+highlight cppStatement ctermfg=167     guifg=#E46876
+
+" Marcadores y ayudas
+highlight Todo         ctermfg=234     ctermbg=228     guifg=#1c1c1c guibg=#ffff87
+highlight SpecialKey   ctermfg=239     guifg=#4e4e4e
+highlight NonText      ctermfg=238     guifg=#444444
+highlight Underlined   ctermfg=111     cterm=underline guifg=#87afff gui=underline
+
+" Efectos especiales
+highlight! link Character   String
+highlight! link Boolean     Constant
+highlight! link Conditional Statement
+
+" Elementos de interfaz mejorados
+highlight ColorColumn  ctermbg=236     guibg=#303030
+highlight Pmenu        ctermbg=238     ctermfg=253     guibg=#444444 guifg=#dadada
+highlight PmenuSel     ctermbg=111     ctermfg=235     guibg=#87afff guifg=#262626

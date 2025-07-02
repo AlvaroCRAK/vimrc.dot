@@ -1,0 +1,116 @@
+" Configuración optimizada para programación competitiva en C++ (Linux Fedora)
+set nocompatible                " Desactivar modo compatible
+
+"=============================================
+" EDITOR BÁSICO
+"=============================================
+set backspace=indent,eol,start   " Backspace normal
+set clipboard=unnamedplus       " Compartir con portapapeles del sistema
+set number relativenumber        " Números absolutos y relativos
+set cursorline                   " Resalta línea actual
+
+"=============================================
+" BUSQUEDAS
+"=============================================
+set ignorecase                  " Búsqueda sin distinguir mayúsculas
+set smartcase                   " Mayúsculas hacen búsqueda exacta
+set hlsearch                    " Resalta resultados
+set incsearch                   " Búsqueda incremental
+set noerrorbells                " Sin campanas de error
+
+"=============================================
+" INDENTACIÓN Y TABULACIÓN
+"=============================================
+set expandtab                   " Tab como espacios
+set shiftwidth=4                " Ancho de indentación
+set softtabstop=4               " Tab suave
+set tabstop=4                   " Tab física
+
+"=============================================
+" RENDIMIENTO DE TECLAS
+"=============================================
+set timeoutlen=500              " Tiempo para secuencias
+
+"=============================================
+" SINTAXIS Y TIPO DE ARCHIVO
+"=============================================
+filetype plugin indent on       " Detectar y aplicar plugins de indent
+syntax on                       " Resalta sintaxis
+
+"=============================================
+" OCULTAR ELEMENTOS NO CRÍTICOS
+"=============================================
+set noswapfile                  " Sin swapfile
+set nobackup                    " Sin backup
+set nowritebackup               " Sin write backup
+set noundofile                  " Sin undo persistente
+
+"=============================================
+" MENSAJE DE INICIO
+"=============================================
+autocmd VimEnter * echo "Vim listo para competir en C++!"
+
+" Tema Gótico Oscuro - Emo Edition (Red-Purple-Green-Black-White)
+highlight clear
+syntax reset
+set background=dark
+syntax enable
+
+" Fondo negro sólido sin transparencia
+highlight Normal       ctermfg=252     ctermbg=NONE    guifg=#DCD7BA guibg=NONE
+highlight LineNr       ctermfg=242     ctermbg=NONE    guifg=#727169 guibg=NONE
+highlight CursorLine   cterm=NONE ctermbg=235 guibg=#2A2A37 gui=NONE
+highlight CursorLineNr cterm=NONE ctermbg=235 ctermfg=200 guifg=#ff00ff  guibg=#2A2A37 gui=NONE
+" highlight Conditional  ctermfg=200     cterm=bold      guifg=#ff00ff gui=bold
+" highlight Conditional  ctermfg=161     cterm=bold      guifg=#d7005f gui=bold
+
+" Elementos de sintaxis góticos
+highlight Comment      ctermfg=240     guifg=#585858   " Gris oscuro
+highlight Constant     ctermfg=160     guifg=#d70000   " Rojo intenso
+highlight Identifier   ctermfg=141     guifg=#af87ff   " Morado suave
+highlight Statement    ctermfg=129     cterm=bold      guifg=#af00ff gui=bold " Morado eléctrico
+highlight PreProc      ctermfg=93      guifg=#8700ff   " Morado profundo
+highlight Type         ctermfg=118     guifg=#87ff00   " Verde neón
+highlight Special      ctermfg=161     guifg=#d7005f   " Rojo frambuesa
+highlight String       ctermfg=200     guifg=#af0000   " Rojo sangre
+highlight Number       ctermfg=129     guifg=#af00ff   " Morado brillante
+highlight MatchParen   ctermfg=255     ctermbg=161     guifg=#ffffff guibg=#d7005f
+
+" Interfaz gótica
+highlight Search       ctermfg=16      ctermbg=160     guifg=#000000 guibg=#d70000
+highlight Visual       ctermbg=236     guibg=#303030
+highlight Error        ctermfg=255     ctermbg=124     guifg=#ffffff guibg=#af0000
+highlight WarningMsg   ctermfg=160     ctermbg=NONE    guifg=#d70000
+highlight Folded       ctermfg=240     ctermbg=233     guifg=#585858 guibg=#121212
+
+" Elementos estructurales
+highlight Include      ctermfg=160     guifg=#d70000   " Rojo intenso
+highlight StorageClass ctermfg=200     guifg=#af00ff   " Morado eléctrico
+highlight Operator     ctermfg=161     guifg=#d7005f   " Rojo frambuesa
+highlight Function     ctermfg=118     guifg=#87ff00   " Verde neón
+
+" Marcadores y ayudas
+highlight Todo         ctermfg=16      ctermbg=118     guifg=#000000 guibg=#87ff00
+highlight SpecialKey   ctermfg=236     guifg=#303030
+highlight NonText      ctermfg=236     guifg=#303030
+highlight Underlined   ctermfg=141     cterm=underline guifg=#af87ff gui=underline
+
+" Elementos de UI
+highlight ColorColumn  ctermbg=233     guibg=#121212
+highlight Pmenu        ctermbg=233     ctermfg=255     guibg=#121212 guifg=#ffffff
+highlight PmenuSel     ctermbg=129     ctermfg=200      guibg=#af00ff guifg=#000000
+highlight StatusLine   ctermbg=16      ctermfg=129     guibg=#000000 guifg=#af00ff
+highlight StatusLineNC ctermbg=16      ctermfg=240     guibg=#000000 guifg=#585858
+
+" Efectos especiales góticos
+highlight Conditional  ctermfg=161     cterm=bold      guifg=#d7005f gui=bold
+highlight Repeat       ctermfg=161     guifg=#d7005f
+highlight Label        ctermfg=129     guifg=#af00ff
+
+" Optimizaciones de enlaces
+highlight! link Character   Constant
+highlight! link Boolean     Constant
+highlight! link Float       Number
+highlight! link Define      PreProc
+highlight! link Macro       PreProc
+
