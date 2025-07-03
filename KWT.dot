@@ -22,9 +22,9 @@ set noerrorbells                " Sin campanas de error
 " INDENTACIÓN Y TABULACIÓN
 "=============================================
 set expandtab                   " Tab como espacios
-set shiftwidth=4                " Ancho de indentación
-set softtabstop=4               " Tab suave
-set tabstop=4                   " Tab física
+set shiftwidth=2                " Ancho de indentación
+set softtabstop=2               " Tab suave
+set tabstop=2                   " Tab física
 
 "=============================================
 " RENDIMIENTO DE TECLAS
