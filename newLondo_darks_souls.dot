@@ -1,0 +1,125 @@
+set nocompatible                " Desactivar modo compatible
+
+"=============================================
+" EDITOR BÁSICO
+"=============================================
+set backspace=indent,eol,start   " Backspace normal
+set clipboard=unnamedplus       " Compartir con portapapeles del sistema
+set number relativenumber        " Números absolutos y relativos
+set cursorline                   " Resalta línea actual
+set scrolloff=12                  " Mantiene 8 líneas de margen al desplazar
+set sidescrolloff=8              " Margen horizontal
+
+"=============================================
+" BUSQUEDAS
+"=============================================
+set ignorecase                  " Búsqueda sin distinguir mayúsculas
+set smartcase                   " Mayúsculas hacen búsqueda exacta
+set hlsearch                    " Resalta resultados
+set incsearch                   " Búsqueda incremental
+set noerrorbells                " Sin campanas de error
+
+"=============================================
+" INDENTACIÓN Y TABULACIÓN
+"=============================================
+set expandtab                   " Tab como espacios
+set shiftwidth=2                " Ancho de indentación
+set softtabstop=2               " Tab suave
+set tabstop=2                   " Tab física
+
+"=============================================
+" RENDIMIENTO DE TECLAS
+"=============================================
+set timeoutlen=500              " Tiempo para secuencias
+
+"=============================================
+" SINTAXIS Y TIPO DE ARCHIVO
+"=============================================
+filetype plugin indent on       " Detectar y aplicar plugins de indent
+syntax on                       " Resalta sintaxis
+
+"=============================================
+" OCULTAR ELEMENTOS NO CRÍTICOS
+"=============================================
+set noswapfile                  " Sin swapfile
+set nobackup                    " Sin backup
+set nowritebackup               " Sin write backup
+set noundofile                  " Sin undo persistente
+
+"=============================================
+" MENSAJE DE INICIO
+"=============================================
+autocmd VimEnter * echo "Vim listo para competir en el abismo de C++!"
+
+"=============================================
+" TEMA DARK SOULS ABISMO DE NEW LONDO CON FONDO TRANSPARENTE
+"=============================================
+set termguicolors               " Habilita true colors
+set background=dark
+
+" Paleta de colores inspirada en Dark Souls, estilo Abismo de New Londo
+highlight Normal       ctermfg=251     ctermbg=NONE    guifg=#B0BEC5 guibg=NONE    " Texto en gris niebla fría
+highlight LineNr       ctermfg=242     ctermbg=NONE    guifg=#4B5E6A guibg=NONE    " Números de línea en gris carbón frío
+highlight CursorLine   cterm=NONE      ctermbg=235     guibg=#14171A gui=NONE      " Línea actual en negro abismal
+highlight CursorLineNr cterm=NONE      ctermbg=235     ctermfg=140     guifg=#8E44AD guibg=#14171A gui=NONE " Número de línea actual en púrpura abismo profundo
+
+" Sintaxis inspirada en Dark Souls
+highlight Comment      ctermfg=246     guifg=#6E8291                       " Comentarios en gris azulado apagado
+highlight Constant     ctermfg=160     guifg=#6D1A1A                       " Constantes en rojo sangre fría
+highlight Identifier   ctermfg=123     guifg=#5DA8C6                       " Identificadores en azul espectral
+highlight Statement    ctermfg=140     guifg=#8E44AD                       " Statements en púrpura abismo profundo
+highlight PreProc      ctermfg=141     guifg=#A76BCA                       " Preprocesadores en violeta oscuro
+highlight Type         ctermfg=108     guifg=#628B8A                       " Tipos en teal frío
+highlight Special      ctermfg=179     guifg=#B8860B                       " Especiales en oro tenuemente apagado
+highlight String       ctermfg=109     guifg=#628B8A                       " Strings en teal frío
+highlight Number       ctermfg=141     guifg=#A76BCA                       " Números en violeta oscuro
+
+" Elementos de UI con transparencia
+highlight Visual       ctermbg=236     guibg=#2A2E33                       " Selección visual en gris oscuro abismal
+highlight Search       ctermfg=235     ctermbg=109     guifg=#14171A guibg=#628B8A " Búsqueda en teal frío sobre fondo oscuro
+highlight Pmenu        ctermbg=NONE    ctermfg=251     guibg=NONE    guifg=#B0BEC5 " Menú emergente en gris niebla fría, fondo transparente
+highlight PmenuSel     ctermbg=237     ctermfg=255     guibg=#3A4047 guifg=#ECEFF4 " Selección de menú en gris carbón frío
+highlight StatusLine   ctermbg=NONE    ctermfg=251     guibg=NONE    guifg=#B0BEC5 " Línea de estado en gris niebla fría, fondo transparente
+highlight Todo         ctermfg=235     ctermbg=220     guifg=#14171A guibg=#B8860B " TODO en oro tenuemente apagado
+highlight Error        ctermfg=235     ctermbg=160     guifg=#14171A guibg=#6D1A1A " Errores en rojo sangre fría
+highlight MatchParen   ctermfg=235     ctermbg=123     guifg=#14171A guibg=#5DA8C6 " Paréntesis coincidentes en azul espectral
+
+" Elementos específicos de C++
+highlight cppType      ctermfg=108     guifg=#628B8A                       " Tipos de C++ en teal frío
+highlight cppSTLType   ctermfg=179     guifg=#B8860B                       " Tipos STL en oro tenuemente apagado
+highlight cppAccess    ctermfg=141     guifg=#A76BCA                       " Modificadores de acceso en violeta oscuro
+highlight cppStatement ctermfg=140     guifg=#8E44AD                       " Statements de C++ en púrpura abismo profundo
+
+" Marcadores y ayudas
+highlight SpecialKey   ctermfg=237     guifg=#3A4047                       " Teclas especiales en gris carbón frío
+highlight NonText      ctermfg=236     guifg=#2A2E33                       " Texto no imprimible en gris oscuro abismal
+highlight Underlined   ctermfg=123     cterm=underline guifg=#5DA8C6 gui=underline " Subrayado en azul espectral
+
+" Efectos especiales
+highlight! link Character   String
+highlight! link Boolean     Constant
+highlight! link Conditional Statement
+
+" Elementos de interfaz mejorados
+highlight ColorColumn  ctermbg=235     guibg=#14171A                       " Columna de color en negro abismal
+highlight Pmenu        ctermbg=236     ctermfg=251     guifg=#B0BEC5 guibg=#2A2E33 " Menú emergente en gris oscuro abismal
+highlight PmenuSel     ctermbg=123     ctermfg=235     guifg=#14171A guibg=#5DA8C6 " Selección de menú en azul espectral
+
+
+"=============================================
+" SOLUCIÓN MÍNIMA Y EFECTIVA
+"=============================================
+
+function! FixCppBracketBraces()
+    " Solo limpiar grupos si existen, sin errores
+    silent! syntax clear cppBracketBraces
+    silent! syntax clear cppBracedInit
+    
+    " Permitir sintaxis normal para [{...}]
+    syntax match cppNormalBrackets /\[\s*{.*}\s*\]/ contains=@cppExpr
+    highlight link cppNormalBrackets Normal
+endfunction
+
+autocmd FileType cpp call FixCppBracketBraces()
+
+nnoremap <leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>

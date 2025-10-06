@@ -104,3 +104,25 @@ highlight! link Conditional Statement
 highlight ColorColumn  ctermbg=236     guibg=#303030
 highlight Pmenu        ctermbg=238     ctermfg=253     guibg=#444444 guifg=#dadada
 highlight PmenuSel     ctermbg=111     ctermfg=235     guibg=#87afff guifg=#262626
+
+" Configuración de scroll automático para CodeForces/Red Coders
+set scrolloff=12                    " Mantiene 5 líneas de margen al desplazar
+set sidescrolloff=8                " Margen horizontal
+
+"=============================================
+" SOLUCIÓN MÍNIMA Y EFECTIVA
+"=============================================
+
+function! FixCppBracketBraces()
+    " Solo limpiar grupos si existen, sin errores
+    silent! syntax clear cppBracketBraces
+    silent! syntax clear cppBracedInit
+    
+    " Permitir sintaxis normal para [{...}]
+    syntax match cppNormalBrackets /\[\s*{.*}\s*\]/ contains=@cppExpr
+    highlight link cppNormalBrackets Normal
+endfunction
+
+autocmd FileType cpp call FixCppBracketBraces()
+
+nnoremap <leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>

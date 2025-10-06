@@ -114,3 +114,24 @@ highlight! link Float       Number
 highlight! link Define      PreProc
 highlight! link Macro       PreProc
 
+" Configuración de scroll automático para CodeForces/Red Coders
+set scrolloff=12                    " Mantiene 5 líneas de margen al desplazar
+set sidescrolloff=8                " Margen horizontal
+
+"=============================================
+" SOLUCIÓN MÍNIMA Y EFECTIVA
+"=============================================
+
+function! FixCppBracketBraces()
+    " Solo limpiar grupos si existen, sin errores
+    silent! syntax clear cppBracketBraces
+    silent! syntax clear cppBracedInit
+    
+    " Permitir sintaxis normal para [{...}]
+    syntax match cppNormalBrackets /\[\s*{.*}\s*\]/ contains=@cppExpr
+    highlight link cppNormalBrackets Normal
+endfunction
+
+autocmd FileType cpp call FixCppBracketBraces()
+
+nnoremap <leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
